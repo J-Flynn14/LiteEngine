@@ -1,0 +1,43 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "gcc",
+            "displayName": "GCC 13.3.0 x86_64-linux-gnu",
+            "description": "Using compilers: C = /usr/bin/gcc, CXX = /usr/bin/g++",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "/usr/bin/gcc",
+                "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "ENABLE_PROFILING": "OFF"
+            }
+        },
+        {
+            "name": "perf",
+            "displayName": "Performance profiling (RelWithDebInfo + frame pointers + LTO)",
+            "inherits": "gcc",
+            "binaryDir": "${sourceDir}/out/build/perf",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "ENABLE_PROFILING": "ON"
+            }
+        },
+        {
+            "name": "mingw",
+            "displayName": "MinGW-w64 cross → Windows",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/toolchains/mingw-w64-x86_64.cmake",
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {"name": "gcc", "configurePreset": "gcc"},
+        {"name": "perf", "configurePreset": "perf"},
+        { "name": "mingw", "configurePreset": "mingw" }
+    ]
+}
