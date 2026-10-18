@@ -6,7 +6,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/quaternion.hpp>
 
-#include "window.h"
+#include "../window.h"
 
 // Screen space here is WINDOW coordinates -- the units glfwGetCursorPos reports --
 // so picking and projection agree on HiDPI displays with a larger framebuffer.

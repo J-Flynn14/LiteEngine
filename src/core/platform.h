@@ -10,7 +10,7 @@
 #include <tuple>
 
 #include "engine_config.h"
-#include "gl_error_handler.h"
+#include "error_handling/gl_error_handler.h"
 #include "logs.h"
 
 #if defined(_WIN32)

@@ -1,5 +1,4 @@
 #pragma once
-#include "engine_config.h"
 
 #include <algorithm>
 #include <array>
@@ -20,9 +19,10 @@
 #endif
 #include <stb_image/stb_image.h>
 
+#include "engine_config.h"
 #include "logs.h"
 #include "paths.h"
-#include "gl_error_handler.h"
+#include "error_handling/gl_error_handler.h"
 
 // GL 3.0 renamed GL_COMPARE_R_TO_TEXTURE to GL_COMPARE_REF_TO_TEXTURE;
 // the value is identical, only the token differs per header generation.

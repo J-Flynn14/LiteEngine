@@ -1,14 +1,14 @@
 #pragma once
-#include "engine_config.h"
 
 #include <cstdint>
 #include <memory>
 #include <utility>
 #include <vector>
 
+#include "engine_config.h"
 #include "logs.h"
 #include "buffer.h"
-#include "gl_error_handler.h"
+#include "error_handling/gl_error_handler.h"
 
 #if ENGINE_HAS_VERTEX_ARRAY
 

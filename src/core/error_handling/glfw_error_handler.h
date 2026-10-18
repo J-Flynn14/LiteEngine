@@ -1,7 +1,7 @@
 #pragma once
-#include "engine_config.h"
-#include "logs.h"
 #include <string>
+#include "../engine_config.h"
+#include "../logs.h"
 
 class GLFWErrorHandler {
     public:

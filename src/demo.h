@@ -5,15 +5,14 @@
 #include <vector>
 
 #include <glm/gtc/matrix_transform.hpp>
-
-#include "app.h"
-#include "camera_2D.h"
-#include "camera_3D.h"
-#include "mesh.h"
-#include "light_2D.h"
-#include "light_3D.h"
-#include "renderer_2D.h"
-#include "renderer_3D.h"
+#include "core/app.h"
+#include "core/camera/camera_2D.h"
+#include "core/camera/camera_3D.h"
+#include "rendering/meshes/mesh.h"
+#include "rendering/lights/light_2D.h"
+#include "rendering/lights/light_3D.h"
+#include "rendering/renderer_2D.h"
+#include "rendering/renderer_3D.h"
 
 namespace {
 

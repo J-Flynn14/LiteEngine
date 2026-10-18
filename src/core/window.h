@@ -13,11 +13,12 @@
 #include <sstream>
 #include <tuple>
 
+#include "engine_config.h"
 #include "logs.h"
 #include "input.h"
 #include "platform.h"
-#include "glfw_error_handler.h"
-#include "gl_error_handler.h"
+#include "error_handling/glfw_error_handler.h"
+#include "error_handling/gl_error_handler.h"
 #include "timer.h"
 
 // imgui_extention.h must not include camera.h, or this include becomes a cycle
@@ -30,7 +31,7 @@
     #else
         #error "IMGUI_ENABLED is on but imgui_impl_glfw.h was not found"
     #endif
-    #include "imgui_extention.h"
+    #include "../imgui_extention/imgui_extention.h"
 #endif
 
 #ifndef GL_TARGET_VERSION

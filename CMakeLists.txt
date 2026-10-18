@@ -340,7 +340,6 @@ set(LITEENGINE_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 add_library(liteengine_core INTERFACE)
 target_include_directories(liteengine_core INTERFACE
     ${LITEENGINE_SRC}/core
-    ${LITEENGINE_SRC}/core/config
     ${LITEENGINE_SRC}/core/error_handling
     ${LITEENGINE_SRC}/core/camera
     ${LITEENGINE_SRC}/imgui_extention)
@@ -383,8 +382,7 @@ add_library(liteengine_rendering INTERFACE)
 target_include_directories(liteengine_rendering INTERFACE
     ${LITEENGINE_SRC}/rendering
     ${LITEENGINE_SRC}/rendering/meshes
-    ${LITEENGINE_SRC}/rendering/lights
-    ${LITEENGINE_SRC}/rendering/renderer)
+    ${LITEENGINE_SRC}/rendering/lights)
 target_link_libraries(liteengine_rendering INTERFACE liteengine_core)
 add_library(LiteEngine::rendering ALIAS liteengine_rendering)
 
@@ -415,7 +413,7 @@ function(liteengine_stage_runtime_directory target dirname)
     file(GLOB_RECURSE staged_files CONFIGURE_DEPENDS ${source_dir}/*)
     list(FILTER staged_files EXCLUDE REGEX "Zone\\.Identifier$")
     if(NOT staged_files)
-        message(WARNING "runtime data: ${dirname}/ has no files to copy")
+        message(STATUS "runtime data: ${dirname}/ has no files to copy")
         return()
     endif()
 

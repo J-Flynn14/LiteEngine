@@ -2,7 +2,7 @@
 
 // LiteEngine: everything in one include.
 //
-//   #include "LiteEngine.h"
+//   #include "LiteEngine/LiteEngine.h"
 //
 // What gets included follows engine_config.h (GL_TARGET_VERSION, IMGUI_ENABLED),
 // so features the target GL version lacks are left out automatically. To trim
@@ -10,50 +10,46 @@
 //
 //   LITEENGINE_NO_2D               skip the 2D camera, lights and renderer
 //   LITEENGINE_NO_3D               skip the 3D camera, lights and renderer
-//   LITEENGINE_NO_MARCHING_CUBES   skip marching cubes and Transvoxel
 //
-// The individual headers ("window.h", "renderer_3D.h", ...) still work on their own.
+// The individual headers ("LiteEngine/window.h", "LiteEngine/renderer_3D.h", ...)
+// still work on their own.
 
-#include "engine_config.h"
+#include "core/engine_config.h"
 
 // ---- core ----
-#include "logs.h"
-#include "paths.h"
-#include "platform.h"
-#include "timer.h"
-#include "input.h"
-#include "window.h"
-#include "app.h"
-#include "buffer.h"
-#include "vertex_array.h"
-#include "shader.h"
-#include "texture.h"
-#include "framebuffer.h"
-#include "camera_core.h"
+#include "core/logs.h"
+#include "core/paths.h"
+#include "core/platform.h"
+#include "core/timer.h"
+#include "core/input.h"
+#include "core/window.h"
+#include "core/app.h"
+#include "core/buffer.h"
+#include "core/vertex_array.h"
+#include "core/shader.h"
+#include "core/texture.h"
+#include "core/framebuffer.h"
+#include "core/camera/camera_core.h"
 
 #if IMGUI_ENABLED
-    #include "imgui_extention.h"
+    #include "imgui_extention/imgui_extention.h"
 #endif
 
 // ---- rendering (needs vertex arrays, GL 3.0+) ----
 #if ENGINE_HAS_VERTEX_ARRAY
-    #include "mesh.h"
-    #include "light_core.h"
-    #include "renderer_core.h"
+    #include "rendering/meshes/mesh.h"
+    #include "rendering/lights/light_core.h"
+    #include "rendering/renderer_core.h"
 
     #if !defined(LITEENGINE_NO_2D)
-        #include "camera_2D.h"
-        #include "light_2D.h"
-        #include "renderer_2D.h"
+        #include "core/camera/camera_2D.h"
+        #include "rendering/lights/light_2D.h"
+        #include "rendering/renderer_2D.h"
     #endif
 
     #if !defined(LITEENGINE_NO_3D)
-        #include "camera_3D.h"
-        #include "light_3D.h"
-        #include "renderer_3D.h"
-    #endif
-
-    #if !defined(LITEENGINE_NO_MARCHING_CUBES)
-        #include "marching_cubes.h"
+        #include "core/camera/camera_3D.h"
+        #include "rendering/lights/light_3D.h"
+        #include "rendering/renderer_3D.h"
     #endif
 #endif

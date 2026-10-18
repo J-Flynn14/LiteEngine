@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
-#include "engine_config.h"
-#include "logs.h"
+#include "../engine_config.h"
+#include "../logs.h"
 
 class GlErrorHandler {
     public:
