@@ -26,9 +26,9 @@
 #endif
 #include <glm/glm.hpp>
 
-#include "engine_config.h"
-#include "platform.h"
-#include "logs.h"
+#include "../core/engine_config.h"
+#include "../core/platform.h"
+#include "../core/logs.h"
 
 // Allocation policy: these helpers build containers inside noexcept functions;
 // allocation failure terminates by design (the engine treats OOM as fatal).

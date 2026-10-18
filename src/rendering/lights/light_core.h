@@ -1,5 +1,5 @@
 #pragma once
-#include "engine_config.h"
+#include "../../core/engine_config.h"
 
 #include <algorithm>
 #include <array>
@@ -14,8 +14,8 @@
 
 #include <glm/glm.hpp>
 
-#include "logs.h"
-#include "shader.h"
+#include "../../core/logs.h"
+#include "../../core/shader.h"
 
 // Dimension-agnostic half of the lighting system, shared by light_2D.h and light_3D.h.
 // GLSL assembly allocates inside noexcept functions; the engine treats OOM as fatal.

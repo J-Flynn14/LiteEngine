@@ -5,7 +5,7 @@
 
 #include <glm/gtc/quaternion.hpp>
 
-#include "light_3D.h"
+#include "./lights/light_3D.h"
 
 // Position, quaternion rotation and scale for an object in the 3D path.
 struct Transform3D {

@@ -1,7 +1,7 @@
 #pragma once
-#include "engine_config.h"
-#include "buffer.h"
-#include "vertex_array.h"
+#include "../../core/engine_config.h"
+#include "../../core/buffer.h"
+#include "../../core/vertex_array.h"
 
 #if ENGINE_HAS_VERTEX_ARRAY
 
@@ -13,7 +13,7 @@
 #include <utility>
 #include <vector>
 
-#include "logs.h"
+#include "../../core/logs.h"
 
 namespace mesh_detail {
 

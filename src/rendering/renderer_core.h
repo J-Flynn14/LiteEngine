@@ -1,5 +1,5 @@
 #pragma once
-#include "engine_config.h"
+#include "../core/engine_config.h"
 
 #include <algorithm>
 #include <cmath>
@@ -11,11 +11,11 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include "buffer.h"
-#include "light_core.h"
-#include "mesh.h"
-#include "shader.h"
-#include "vertex_array.h"
+#include "../core/buffer.h"
+#include "./lights/light_core.h"
+#include "./meshes/mesh.h"
+#include "../core/shader.h"
+#include "../core/vertex_array.h"
 
 // Dimension-agnostic helpers shared by renderer_2D.h and renderer_3D.h.
 namespace renderer_tools {

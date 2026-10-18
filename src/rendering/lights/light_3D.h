@@ -5,8 +5,8 @@
 
 #include <glm/gtc/matrix_transform.hpp>
 
-#include "framebuffer.h"
-#include "texture.h"
+#include "../../core/framebuffer.h"
+#include "../../core/texture.h"
 
 // Configuration for a Light3D. Angles are half-angles in degrees; areaSize is width
 // and height, or a radius in x when areaIsDisc is set.

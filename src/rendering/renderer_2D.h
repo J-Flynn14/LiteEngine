@@ -3,8 +3,8 @@
 
 #include <functional>
 
-#include "light_2D.h"
-#include "texture.h"
+#include "./lights/light_2D.h"
+#include "../core/texture.h"
 
 // Position, rotation (radians, counter-clockwise) and scale in Camera2D world units.
 struct Transform2D {
